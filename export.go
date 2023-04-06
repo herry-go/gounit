@@ -19,7 +19,7 @@ func (md *Mysqldump) Export() (outFile string, err error) {
 	}
 	// 创建导出sql文件
 	outFile = fmt.Sprintf("%s/%s.sql", strings.TrimRight(md.cfg.OutPath, "/"), md.cfg.DbCfg.DbName)
-	pwd := md.GetPwdDir()
+	pwd, _ := os.Getwd()
 	outFile = pwd + outFile
 	lf, err := os.OpenFile(outFile, os.O_CREATE|os.O_WRONLY|os.O_CREATE, 0660)
 	if err != nil {

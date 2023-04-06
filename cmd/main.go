@@ -15,8 +15,8 @@ func main() {
 			IsExportData: false,
 			IsCreateDB:   true,
 			OutZip:       false,
-			OutPath:      "/sql",
-			SQLPath:      "/sql/udcp_policy.sql",
+			OutPath:      "/test/base",
+			SQLPath:      "/test/base/udcp_policy.sql",
 			DbCfg: &gounit.DbConfig{
 				Address: "10.20.22.113",
 				Port:    10002,
@@ -32,6 +32,8 @@ func main() {
 		log.Println(err)
 		return
 	}
+
+	gounit.BeforeEach()
 
 
 	//dm, err := gounit.New(cfg)

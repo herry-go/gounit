@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"path/filepath"
 	"runtime"
 	"strings"
 )
@@ -83,7 +82,7 @@ func BeforeEach() {
 		err := errors.New("请先开启 Gounit！")
 		panic(err)
 	}
-	err := Gunit.dm.Import(sqlFile)
+	err := Gunit.dm.Import("/before/"+sqlFile)
 	if err != nil {
 		log.Println(err)
 		panic(err)
