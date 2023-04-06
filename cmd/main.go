@@ -15,8 +15,8 @@ func main() {
 			IsExportData: false,
 			IsCreateDB:   true,
 			OutZip:       false,
-			OutPath:      "/testdata/base",
-			SQLPath:      "/testdata/base/udcp_policy.sql",
+			OutPath:      "/testdata",
+			SQLPath:      "/testdata/udcp_policy.sql",
 			DbCfg: &gounit.DbConfig{
 				Address: "10.20.22.113",
 				Port:    10002,
