@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jinzhu/gounit"
+	"github.com/herry-go/gounit"
 	"log"
 )
 
