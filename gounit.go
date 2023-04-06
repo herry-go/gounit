@@ -26,6 +26,7 @@ func GounitStart(config *UnitConfig) error {
 		cfg: config,
 		dm:  dm,
 	}
+	Gunit = gounit
 	if !gounit.EmptyContext() && !gounit.cfg.RebuildContext {
 		return err
 	}
@@ -34,7 +35,6 @@ func GounitStart(config *UnitConfig) error {
 		log.Println(err)
 		return err
 	}
-	Gunit = gounit
 	return err
 }
 
@@ -88,12 +88,4 @@ func BeforeEach() {
 		log.Println(err)
 		panic(err)
 	}
-}
-func getPwd() string {
-	pc, file, line, ok := runtime.Caller(0)
-	pcName := runtime.FuncForPC(pc).Name()
-	log.Println(fmt.Sprintf("%v   %s   %d   %t   %s", pc, file, line, ok, pcName))
-	dir, _ := filepath.Abs(filepath.Dir(file))
-	log.Println(dir)
-	return dir
 }
