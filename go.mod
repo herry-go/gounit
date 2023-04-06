@@ -1,4 +1,4 @@
-module gounit
+module github.com/jinzhu/gounit
 
 go 1.19
 
